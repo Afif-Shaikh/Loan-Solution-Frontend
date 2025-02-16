@@ -1,0 +1,113 @@
+/* loans.css */
+
+/* Root variables for easy theme management */
+:root {
+    --primary-color: #4a90e2; /* Bright blue */
+    --secondary-color: #50e3c2; /* Teal */
+    --background-color: #f7f9fc; /* Light background */
+    --card-background: #ffffff; /* White for cards */
+    --text-color: #333; /* Dark text */
+    --border-color: #e0e0e0; /* Light border */
+    --hover-color: #0056b3; /* Darker blue for hover */
+    --disabled-color: #b0b0b0; /* Gray for disabled buttons */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px; /* Limit the width for better readability */
+    margin: 50px auto;
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+h2 {
+    color: var(--text-color);
+    margin-top: 20px;
+    font-size: 1.5em; /* Larger subheading */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    color: var(--text-color);
+    font-weight: 500; /* Slightly bolder labels */
+}
+
+form input, form select {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+form input:focus, form select:focus {
+    border-color: var(--primary-color); /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+form button {
+    padding: 15px;
+    margin: 10px 0;
+    border: none; /* Remove default border */
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 18px; /* Larger button text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+form button:hover {
+    background-color: var(--hover-color); /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+form button:disabled {
+    background-color: var(--disabled-color); /* Gray for disabled buttons */
+    cursor: not-allowed; /* Change cursor for disabled state */
+}
+
+.loan-list {
+    margin-top: 20px;
+}
+
+.loan-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.loan-list li {
+    background-color: #f8f9fa; /* Light gray for list items */
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transform effect */
+}
+
+.loan-list li:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}

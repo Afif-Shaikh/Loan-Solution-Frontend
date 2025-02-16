@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Application</title>
+    <link rel="stylesheet" href="loans.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Application</h1>
+
+        <!-- Aadhaar Verification -->
+        <h2>Aadhaar Verification</h2>
+        <input type="text" id="aadhaarNumber" placeholder="Enter Aadhaar Number" required>
+        <button onclick="verifyAadhaar()">Verify Aadhaar</button>
+        <p id="aadhaarStatus"></p>
+
+        <!-- PAN Verification -->
+        <h2>PAN Verification</h2>
+        <input type="text" id="panNumber" placeholder="Enter PAN Number" required disabled>
+        <button onclick="checkCibilScore()" disabled>Check CIBIL Score</button>
+        <p id="cibilStatus"></p>
+
+        <!-- Loan Form (Initially Disabled) -->
+        <form id="loanForm" style="display:none;">
+            <label for="borrowerName">Borrower's Name:</label>
+            <input type="text" id="borrowerName" required>
+
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" id="loanAmount" required>
+
+            <label for="loanType">Loan Type:</label>
+            <select id="loanType">
+                <option value="Personal">Personal</option>
+                <option value="Home">Home</option>
+                <option value="Auto">Auto</option>
+            </select>
+
+            <label for="loanTerm">Loan Term (Months):</label>
+            <input type="number" id="loanTerm" required>
+
+            <label for="interestRate">Interest Rate (%):</label>
+            <input type="number" id="interestRate" required>
+
+            <button type="submit">Apply for Loan</button>
+        </form>
+    </div>
+
+    <script src="loan.js"></script>
+</body>
+</html>
