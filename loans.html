@@ -2,48 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Application</title>
     <link rel="stylesheet" href="loans.css">
+    
 </head>
 <body>
-    <div class="container">
-        <h1>Loan Application</h1>
+    <h2>Loan Application</h2>
 
-        <!-- Aadhaar Verification -->
-        <h2>Aadhaar Verification</h2>
-        <input type="text" id="aadhaarNumber" placeholder="Enter Aadhaar Number" required>
+    <!-- Aadhaar Verification Section -->
+    <div>
+        <h3>Aadhaar Verification</h3>
+        <input type="text" id="aadhaarNumber" placeholder="Enter Aadhaar Number">
         <button onclick="verifyAadhaar()">Verify Aadhaar</button>
-        <p id="aadhaarStatus"></p>
+        <div id="aadhaarStatus"></div>
+    </div>
 
-        <!-- PAN Verification -->
-        <h2>PAN Verification</h2>
-        <input type="text" id="panNumber" placeholder="Enter PAN Number" required disabled>
-        <button onclick="checkCibilScore()" disabled>Check CIBIL Score</button>
-        <p id="cibilStatus"></p>
+    <!-- Auto-Filled Fields from Aadhaar -->
+    <div id="aadhaarDetails" style="display: none;">
+        <h3>Auto-Filled Aadhaar Details</h3>
+        <label>First Name:</label> <input type="text" id="firstName" disabled>
+        <label>Middle Name:</label> <input type="text" id="middleName" disabled>
+        <label>Surname:</label> <input type="text" id="surname" disabled>
+        <label>Date of Birth:</label> <input type="text" id="dob" disabled>
+        <label>Gender:</label> <input type="text" id="gender" disabled>
+        <label>Address Line 1:</label> <input type="text" id="address1" disabled>
+        <label>Address Line 2:</label> <input type="text" id="address2" disabled>
+        <label>City:</label> <input type="text" id="city" disabled>
+        <label>State:</label> <input type="text" id="state" disabled>
+        <label>Pincode:</label> <input type="text" id="pincode" disabled>
+    </div>
 
-        <!-- Loan Form (Initially Disabled) -->
-        <form id="loanForm" style="display:none;">
-            <label for="borrowerName">Borrower's Name:</label>
-            <input type="text" id="borrowerName" required>
+    <!-- PAN Verification Section -->
+    <div>
+        <h3>PAN Verification</h3>
+        <input type="text" id="panNumber" placeholder="Enter PAN Number" disabled>
+        <button onclick="verifyPAN()">Verify PAN</button>
+        <div id="cibilStatus"></div>
+    </div>
 
-            <label for="loanAmount">Loan Amount:</label>
-            <input type="number" id="loanAmount" required>
+    <!-- Auto-Filled Fields from PAN -->
+    <div id="panDetails" style="display: none;">
+        <h3>Auto-Filled PAN Details</h3>
+        <label>CIBIL Score:</label> <input type="text" id="cibilScore" disabled>
+    </div>
 
-            <label for="loanType">Loan Type:</label>
-            <select id="loanType">
-                <option value="Personal">Personal</option>
-                <option value="Home">Home</option>
-                <option value="Auto">Auto</option>
-            </select>
-
-            <label for="loanTerm">Loan Term (Months):</label>
-            <input type="number" id="loanTerm" required>
-
-            <label for="interestRate">Interest Rate (%):</label>
-            <input type="number" id="interestRate" required>
-
-            <button type="submit">Apply for Loan</button>
-        </form>
+    <!-- Loan Application Form -->
+    <div id="loanForm" style="display: none;">
+        <h3>Loan Application</h3>
+        <button id="applyLoanBtn">Apply for Loan</button>
     </div>
 
     <script src="loan.js"></script>

@@ -1,113 +1,108 @@
-/* loans.css */
-
-/* Root variables for easy theme management */
-:root {
-    --primary-color: #4a90e2; /* Bright blue */
-    --secondary-color: #50e3c2; /* Teal */
-    --background-color: #f7f9fc; /* Light background */
-    --card-background: #ffffff; /* White for cards */
-    --text-color: #333; /* Dark text */
-    --border-color: #e0e0e0; /* Light border */
-    --hover-color: #0056b3; /* Darker blue for hover */
-    --disabled-color: #b0b0b0; /* Gray for disabled buttons */
-}
-
+/* General Page Styling */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    background-color: var(--background-color);
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-}
-
-.container {
-    width: 90%;
-    max-width: 600px; /* Limit the width for better readability */
-    margin: 50px auto;
-    background-color: var(--card-background);
-    padding: 30px;
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
-}
-
-h1 {
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    font-size: 2.5em; /* Larger heading */
-}
-
-h2 {
-    color: var(--text-color);
-    margin-top: 20px;
-    font-size: 1.5em; /* Larger subheading */
-}
-
-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-form label {
-    margin: 10px 0 5px;
-    color: var(--text-color);
-    font-weight: 500; /* Slightly bolder labels */
+/* Container for Forms */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-form input, form select {
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid var(--border-color);
-    border-radius: 8px; /* More rounded inputs */
+/* Section Headers */
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form Elements */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
-    transition: border-color 0.3s ease; /* Smooth transition */
+    background-color: #f9f9f9;
+    transition: 0.3s;
 }
 
-form input:focus, form select:focus {
-    border-color: var(--primary-color); /* Blue border on focus */
-    outline: none; /* Remove default outline */
+input[type="text"]:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    outline: none;
 }
 
-form button {
-    padding: 15px;
-    margin: 10px 0;
-    border: none; /* Remove default border */
-    border-radius: 8px;
-    background-color: var(--primary-color);
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
     color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 18px; /* Larger button text */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    transition: 0.3s;
+    margin-top: 10px;
 }
 
-form button:hover {
-    background-color: var(--hover-color); /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+button:hover {
+    background-color: #0056b3;
 }
 
-form button:disabled {
-    background-color: var(--disabled-color); /* Gray for disabled buttons */
-    cursor: not-allowed; /* Change cursor for disabled state */
+/* Status Messages */
+#aadhaarStatus, #cibilStatus {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.loan-list {
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Disabled Input Styling */
+input[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Loan Application Form Styling */
+#loanForm {
+    display: none;
     margin-top: 20px;
 }
 
-.loan-list ul {
-    list-style-type: none;
-    padding: 0;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
 
-.loan-list li {
-    background-color: #f8f9fa; /* Light gray for list items */
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transform effect */
-}
-
-.loan-list li:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+    input[type="text"], button {
+        font-size: 14px;
+    }
 }
